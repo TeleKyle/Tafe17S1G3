@@ -97,9 +97,37 @@ namespace VendorMaintenance
 
         private void button1_Click(object sender, EventArgs e)
         {
+            frmStateModify addModifyStateForm = new frmStateModify();
+            addModifyStateForm.addState = true;
+            DialogResult result = addModifyStateForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                SelectedState = addModifyStateForm.state;
+                comboState.SelectedValue = SelectedState.StateCode.ToString();
+                this.DisplayState();
+            }
+        }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmStateModify addModifyStateForm = new frmStateModify();
+            addModifyStateForm.addState = false;
+            addModifyStateForm.state = SelectedState;
+            DialogResult result = addModifyStateForm.ShowDialog();
+            
+            if (result == DialogResult.OK || result == DialogResult.Retry)
+            {
+                SelectedState = addModifyStateForm.state;
+                this.DisplayState();
+            }
+            else if (result == DialogResult.Abort)
+            {
+                comboState.SelectedValue = -1;
+                this.ClearControls();
+            }
+        }
         }
 
         }
-    }
+    
 
