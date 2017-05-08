@@ -61,6 +61,8 @@ namespace VendorMaintenance
                          where state.StateCode == Convert.ToString(comboState.SelectedValue)
                          select state).Single();
                     this.DisplayState();
+                    btnEdit.Enabled = true;
+                    btnDelete.Enabled = true;
                 }
                 catch (InvalidOperationException)
                 {
@@ -90,6 +92,8 @@ namespace VendorMaintenance
             comboState.SelectedValue = -1;
             txtFirstZIP.Text = "";
             txtLastZIP.Text = SelectedState.LastZipCode.ToString();
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
 
 
 

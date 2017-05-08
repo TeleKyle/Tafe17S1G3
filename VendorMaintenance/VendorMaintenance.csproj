@@ -86,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddModifyVendor.resx">
+      <DependentUpon>frmAddModifyVendor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStateMaintain.resx">
       <DependentUpon>frmStateMaintain.cs</DependentUpon>
     </EmbeddedResource>
