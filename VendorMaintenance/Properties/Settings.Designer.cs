@@ -33,5 +33,16 @@ namespace VendorMaintenance.Properties {
                 return ((string)(this["PayablesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KKR7GIM\\SQLEXPRESS;Initial Catalog=Payables;Integrated Securi" +
+            "ty=True")]
+        public string PayablesConnectionString1 {
+            get {
+                return ((string)(this["PayablesConnectionString1"]));
+            }
+        }
     }
 }

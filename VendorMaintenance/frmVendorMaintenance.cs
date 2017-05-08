@@ -134,5 +134,12 @@ namespace VendorMaintenance
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmStateMaintain StateForm = new frmStateMaintain();
+            StateForm.ShowDialog();
+
+        }
     }
 }

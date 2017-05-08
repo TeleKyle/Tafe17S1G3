@@ -80,12 +80,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmStateMaintain.resx">
+      <DependentUpon>frmStateMaintain.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Payables.dbml.layout">
       <DependentUpon>Payables.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="frmVendorMaintenance.resx">
+      <DependentUpon>frmVendorMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,6 +115,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmStateMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStateMaintain.Designer.cs">
+      <DependentUpon>frmStateMaintain.cs</DependentUpon>
     </Compile>
     <Compile Include="Validator.cs" />
   </ItemGroup>
