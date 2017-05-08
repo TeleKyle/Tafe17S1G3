@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Linq;
 
 namespace VendorMaintenance
 {
@@ -128,6 +129,35 @@ namespace VendorMaintenance
             {
                 comboState.SelectedValue = -1;
                 this.ClearControls();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result =
+              MessageBox.Show("Delete " + SelectedState.StateName + "?",
+              "Confirm Delete", MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    DataContext.payables.States.DeleteOnSubmit(SelectedState);
+                    DataContext.payables.SubmitChanges();
+                    comboState.SelectedValue = -1;
+                    this.ClearControls();
+                }
+                catch (ChangeConflictException)
+                {
+                    DataContext.GetCurrentValues();
+                    MessageBox.Show("Another user has updated that state.",
+                        "Database Error");
+                    this.DisplayState();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
             }
         }
         }
