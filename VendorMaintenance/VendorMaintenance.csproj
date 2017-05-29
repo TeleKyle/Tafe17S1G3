@@ -17,6 +17,21 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,18 +75,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddModifyInvoiceSeq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModifyInvoiceSeq.Designer.cs">
+      <DependentUpon>frmAddModifyInvoiceSeq.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContext.cs" />
+    <Compile Include="frmAddModifyInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModifyInvoice.Designer.cs">
+      <DependentUpon>frmAddModifyInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddModifyVendor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddModifyVendor.Designer.cs">
       <DependentUpon>frmAddModifyVendor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoice.Designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVendorMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVendorMaintenance.Designer.cs">
       <DependentUpon>frmVendorMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payables.cs">
+      <DependentUpon>Payables.dbml</DependentUpon>
     </Compile>
     <Compile Include="Payables.designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,6 +122,21 @@
     <None Include="Payables.dbml.layout">
       <DependentUpon>Payables.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="frmAddModifyInvoiceSeq.resx">
+      <DependentUpon>frmAddModifyInvoiceSeq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddModifyInvoice.resx">
+      <DependentUpon>frmAddModifyInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddModifyVendor.resx">
+      <DependentUpon>frmAddModifyVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendorMaintenance.resx">
+      <DependentUpon>frmVendorMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,6 +165,32 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="payables.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="payables_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>payables.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

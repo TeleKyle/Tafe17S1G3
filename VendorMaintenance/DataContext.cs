@@ -10,6 +10,8 @@ namespace VendorMaintenance
     {
         public static PayablesDataContext payables = new PayablesDataContext();
         public static bool vendorDeleted;
+        public static bool invoiceDeleted;
+        public static bool invoiceLineItemDeleted;
 
         public static void GetCurrentValues()
         {
@@ -17,12 +19,19 @@ namespace VendorMaintenance
                     in payables.ChangeConflicts)
             {
                 if (objConflict.MemberConflicts.Count == 0)
+                {
                     vendorDeleted = true;
+                    invoiceDeleted = true;
+                    invoiceLineItemDeleted = true;
+                }
                 else
                 {
                     objConflict.Resolve(RefreshMode.OverwriteCurrentValues);
                     vendorDeleted = false;
+                    invoiceDeleted = false;
+                    invoiceLineItemDeleted = false;
                 }
+
             }
         }
     }
