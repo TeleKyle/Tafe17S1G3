@@ -67,18 +67,26 @@ namespace VendorMaintenance
                     txtDueDate.Text = selectedInvoice.DueDate.ToString();
                     txtPaymentDate.Text = selectedInvoice.PaymentDate.ToString();
                     int numberInvoiceLineItems = FindNumberOfInvoiceLineItems(selectedInvoice);
-                    for (int i = 1; i <= numberInvoiceLineItems; i++)
-                    {
-                        listInvoiceSequence.Items.Add(i.ToString());
+                    if(numberInvoiceLineItems > 0){
+                        for (int i = 1; i <= numberInvoiceLineItems; i++)
+                        {
+                            listInvoiceSequence.Items.Add(i.ToString());
+                            btnDeleteInvoiceItem.Enabled = true;
 
+                        }
                     }
-            
+                    else
+                    {
+                        listInvoiceSequence.Items.Add("1");
+                        txtAccountNum.Text = "";
+                        txtAmount.Text = "";
+                        txtDescription.Text = "";
+                    }
 
                     listInvoiceSequence.SelectedIndex = 0;
-
                     btnAddInvSeq.Enabled = true;
+
                     btnModifyInvSeq.Enabled = true;
-                    btnDeleteInvoiceItem.Enabled = true;
                     btnModify.Enabled = true;
                     btnDelete.Enabled = true;
                 }

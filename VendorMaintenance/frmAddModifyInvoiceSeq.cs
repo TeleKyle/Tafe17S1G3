@@ -133,7 +133,7 @@ namespace VendorMaintenance
             invoiceLineItem.AccountNo = System.Convert.ToInt32(cboAccountNum.Text);
             invoiceLineItem.Amount = System.Convert.ToDecimal(txtAmount.Text);
             invoiceLineItem.Description = txtDescription.Text;
-
+            invoiceLineItem.InvoiceSequence = short.Parse(txtInvoiceSequence.Text);
 
         }
 
