@@ -33,10 +33,6 @@ namespace VendorMaintenance.Properties {
                 return ((string)(this["PayablesConnectionString"]));
             }
         }
-
-
-
-
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -49,3 +45,4 @@ namespace VendorMaintenance.Properties {
             }
         }
     }
+}

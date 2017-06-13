@@ -63,7 +63,7 @@ namespace VendorMaintenance
                          select state).Single();
                     this.DisplayState();
                     btnEdit.Enabled = true;
-                    btnDelete.Enabled = true;
+
                 }
                 catch (InvalidOperationException)
                 {
@@ -94,7 +94,7 @@ namespace VendorMaintenance
             txtFirstZIP.Text = "";
             txtLastZIP.Text = SelectedState.LastZipCode.ToString();
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+
 
 
 

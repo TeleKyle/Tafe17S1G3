@@ -46,14 +46,16 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();            this.btnGoToInvoices = new System.Windows.Forms.Button();            this.SuspendLayout();
+            this.btnGoToInvoices = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-
+            this.btnExit.Location = new System.Drawing.Point(284, 205);
             this.btnExit.Name = "btnExit";
-
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 50;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -62,9 +64,9 @@
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-
+            this.btnDelete.Location = new System.Drawing.Point(179, 205);
             this.btnDelete.Name = "btnDelete";
-
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 49;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -73,9 +75,9 @@
             // btnModify
             // 
             this.btnModify.Enabled = false;
-
+            this.btnModify.Location = new System.Drawing.Point(98, 205);
             this.btnModify.Name = "btnModify";
-
+            this.btnModify.Size = new System.Drawing.Size(75, 23);
             this.btnModify.TabIndex = 48;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -83,9 +85,9 @@
             // 
             // btnAdd
             // 
-
+            this.btnAdd.Location = new System.Drawing.Point(17, 205);
             this.btnAdd.Name = "btnAdd";
-
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 47;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -93,18 +95,18 @@
             // 
             // txtState
             // 
-
+            this.txtState.Location = new System.Drawing.Point(79, 155);
             this.txtState.Name = "txtState";
             this.txtState.ReadOnly = true;
-
+            this.txtState.Size = new System.Drawing.Size(130, 20);
             this.txtState.TabIndex = 46;
             this.txtState.TabStop = false;
             // 
             // btnGetVendor
             // 
-
+            this.btnGetVendor.Location = new System.Drawing.Point(136, 14);
             this.btnGetVendor.Name = "btnGetVendor";
-
+            this.btnGetVendor.Size = new System.Drawing.Size(75, 23);
             this.btnGetVendor.TabIndex = 45;
             this.btnGetVendor.Text = "Get Vendor";
             this.btnGetVendor.UseVisualStyleBackColor = true;
@@ -112,125 +114,117 @@
             // 
             // txtVendorID
             // 
-
+            this.txtVendorID.Location = new System.Drawing.Point(79, 14);
             this.txtVendorID.Name = "txtVendorID";
-
+            this.txtVendorID.Size = new System.Drawing.Size(50, 20);
             this.txtVendorID.TabIndex = 44;
             this.txtVendorID.Tag = "Vendor ID";
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-
+            this.Label1.Location = new System.Drawing.Point(15, 17);
             this.Label1.Name = "Label1";
-
+            this.Label1.Size = new System.Drawing.Size(58, 13);
             this.Label1.TabIndex = 43;
             this.Label1.Text = "Vendor ID:";
             // 
             // txtZipCode
             // 
-
+            this.txtZipCode.Location = new System.Drawing.Point(279, 156);
             this.txtZipCode.MaxLength = 20;
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.ReadOnly = true;
-
+            this.txtZipCode.Size = new System.Drawing.Size(80, 20);
             this.txtZipCode.TabIndex = 42;
             this.txtZipCode.TabStop = false;
             // 
             // Label7
             // 
             this.Label7.AutoSize = true;
-
+            this.Label7.Location = new System.Drawing.Point(221, 159);
             this.Label7.Name = "Label7";
-
+            this.Label7.Size = new System.Drawing.Size(52, 13);
             this.Label7.TabIndex = 41;
             this.Label7.Text = "Zip code:";
             // 
             // Label6
             // 
             this.Label6.AutoSize = true;
-
+            this.Label6.Location = new System.Drawing.Point(15, 159);
             this.Label6.Name = "Label6";
-
+            this.Label6.Size = new System.Drawing.Size(35, 13);
             this.Label6.TabIndex = 40;
             this.Label6.Text = "State:";
             // 
             // txtCity
             // 
-
+            this.txtCity.Location = new System.Drawing.Point(79, 130);
             this.txtCity.MaxLength = 50;
             this.txtCity.Name = "txtCity";
             this.txtCity.ReadOnly = true;
-
+            this.txtCity.Size = new System.Drawing.Size(280, 20);
             this.txtCity.TabIndex = 39;
             this.txtCity.TabStop = false;
             // 
             // Label5
             // 
             this.Label5.AutoSize = true;
-
+            this.Label5.Location = new System.Drawing.Point(15, 133);
             this.Label5.Name = "Label5";
-
+            this.Label5.Size = new System.Drawing.Size(27, 13);
             this.Label5.TabIndex = 38;
             this.Label5.Text = "City:";
             // 
             // txtAddress2
             // 
-
+            this.txtAddress2.Location = new System.Drawing.Point(79, 104);
             this.txtAddress2.MaxLength = 50;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.ReadOnly = true;
-
+            this.txtAddress2.Size = new System.Drawing.Size(280, 20);
             this.txtAddress2.TabIndex = 37;
             this.txtAddress2.TabStop = false;
             // 
             // txtAddress1
             // 
-
+            this.txtAddress1.Location = new System.Drawing.Point(79, 78);
             this.txtAddress1.MaxLength = 50;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.ReadOnly = true;
-
+            this.txtAddress1.Size = new System.Drawing.Size(280, 20);
             this.txtAddress1.TabIndex = 36;
             this.txtAddress1.TabStop = false;
             // 
             // Label3
             // 
             this.Label3.AutoSize = true;
-
+            this.Label3.Location = new System.Drawing.Point(15, 81);
             this.Label3.Name = "Label3";
-
+            this.Label3.Size = new System.Drawing.Size(48, 13);
             this.Label3.TabIndex = 35;
             this.Label3.Text = "Address:";
             // 
             // txtName
             // 
-
+            this.txtName.Location = new System.Drawing.Point(79, 52);
             this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-
+            this.txtName.Size = new System.Drawing.Size(280, 20);
             this.txtName.TabIndex = 34;
             this.txtName.TabStop = false;
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-
+            this.Label2.Location = new System.Drawing.Point(15, 55);
             this.Label2.Name = "Label2";
-
+            this.Label2.Size = new System.Drawing.Size(38, 13);
             this.Label2.TabIndex = 33;
             this.Label2.Text = "Name:";
             // 
-// button1
-            // 
-            this.button1.Location = new System.Drawing.Point(297, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "State";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);            // btnGoToInvoices
+            // btnGoToInvoices
             // 
             this.btnGoToInvoices.Location = new System.Drawing.Point(18, 239);
             this.btnGoToInvoices.Name = "btnGoToInvoices";
@@ -239,14 +233,26 @@
             this.btnGoToInvoices.Text = "Go To Invoices";
             this.btnGoToInvoices.UseVisualStyleBackColor = true;
             this.btnGoToInvoices.Click += new System.EventHandler(this.btnGoToInvoices_Click);
-            //             // frmVendorMaintenance
             // 
-
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(118, 239);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Go To State";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // frmVendorMaintenance
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-this.ClientSize = new System.Drawing.Size(380, 262);
+            this.ClientSize = new System.Drawing.Size(380, 274);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnGoToInvoices);            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnGoToInvoices);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnAdd);
@@ -294,6 +300,8 @@ this.ClientSize = new System.Drawing.Size(380, 262);
         internal System.Windows.Forms.TextBox txtName;
         internal System.Windows.Forms.Label Label2;
         private System.Windows.Forms.Button btnGoToInvoices;
-        private System.Windows.Forms.Button button1;    }
+        private System.Windows.Forms.Button button1;
+
+    }
 }
 

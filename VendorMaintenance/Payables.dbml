@@ -1,7 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Database Name="Payables" Class="PayablesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=Payables;Integrated Security=True" SettingsObjectName="VendorMaintenance.Properties.Settings" SettingsPropertyName="PayablesConnectionString" Provider="System.Data.SqlClient" />
-<?xml version="1.0" encoding="utf-8"?><Database Name="payables" Class="PayablesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="payables" Class="PayablesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\payables.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="VendorMaintenance.Properties.Settings" SettingsPropertyName="payablesConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Vendors" Member="Vendors">
     <Type Name="Vendor">
@@ -49,18 +46,6 @@
       <Association Name="GLAccount_InvoiceLineItem" Member="InvoiceLineItems" ThisKey="AccountNo" OtherKey="AccountNo" Type="InvoiceLineItem" />
     </Type>
   </Table>
-
-
-
-
-
-
-
-
-
-
-
-
   <Table Name="dbo.Invoices" Member="Invoices">
     <Type Name="Invoice">
       <Column Name="InvoiceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

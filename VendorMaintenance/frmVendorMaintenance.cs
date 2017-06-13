@@ -134,17 +134,18 @@ namespace VendorMaintenance
         {
             this.Close();
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmStateMaintain StateForm = new frmStateMaintain();
-            StateForm.ShowDialog();
-
-        }
 
         private void btnGoToInvoices_Click(object sender, EventArgs e)
         {
             var newForm = new frmInvoice();
             newForm.Show();
             
-        }    }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var newForm = new frmStateMaintain();
+            newForm.Show();
+        }
+    }
 }
