@@ -194,5 +194,10 @@ namespace VendorMaintenance
             vendor.ContactFName = txtFirstName.Text;
             vendor.ContactLName = txtLastName.Text;
         }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

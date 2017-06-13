@@ -22,6 +22,7 @@ namespace VendorMaintenance
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Payables")]
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="payables")]
 	public partial class PayablesDataContext : System.Data.Linq.DataContext
 	{
@@ -42,6 +43,9 @@ namespace VendorMaintenance
     partial void InsertGLAccount(GLAccount instance);
     partial void UpdateGLAccount(GLAccount instance);
     partial void DeleteGLAccount(GLAccount instance);
+
+
+
     partial void InsertInvoice(Invoice instance);
     partial void UpdateInvoice(Invoice instance);
     partial void DeleteInvoice(Invoice instance);
@@ -51,6 +55,7 @@ namespace VendorMaintenance
     #endregion
 		
 		public PayablesDataContext() : 
+				base(global::VendorMaintenance.Properties.Settings.Default.PayablesConnectionString, mappingSource)
 				base(global::VendorMaintenance.Properties.Settings.Default.payablesConnectionString1, mappingSource)
 		{
 			OnCreated();
@@ -111,6 +116,14 @@ namespace VendorMaintenance
 				return this.GetTable<GLAccount>();
 			}
 		}
+
+
+
+
+
+
+
+
 		
 		public System.Data.Linq.Table<Invoice> Invoices
 		{
@@ -1075,6 +1088,33 @@ namespace VendorMaintenance
 			entity.GLAccount = null;
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Invoices")]
 	public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
