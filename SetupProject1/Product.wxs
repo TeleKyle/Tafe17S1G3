@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="0EB78E58-3E95-42CD-AA25-5B18475BA313" Name="VendorMaintenance" Language="1033" Version="1.1.0.0" Manufacturer="TAFESA" 
+           UpgradeCode="E0EBA7C0-FB4D-4F79-9770-FAD3D5F61919">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+
+    <!--Here We Install Our Main App-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="VendorMaintenance"/>
+      </Directory>
+
+      <!-- Step 1: For the Program Menu -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Banking"/>
+      </Directory>
+
+      <!--Step 2:For Desktop Folder-->
+      <Directory Id="DesktopFolder"/>
+
+      <!--Step 3:For StartUp Folder-->
+      <Directory Id="StartupFolder"/>
+
+    </Directory>
+
+    <!--Step 4 :Add Main App exe-->
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="VendorMaintenance.exe" Guid="70D13B51-1923-4212-B247-F9BD9A3D159C">
+        <File Source="G:\TAFE\5TSD\Assignment pt 2\VendorMaintenance - 1.1.0.0\Tafe17S1G3\VendorMaintenance\bin\Debug\VendorMaintenance.exe" 
+              Name="VendorMaintenance.exe"
+              Id="VendorMaintenanceEXE" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- Step 1.1: Add the shortcut to your installer package Program Menu or Start Menu-->
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="E62394F0-AF87-412D-9116-C812394FB2B3">
+        <!--Add Shortcut of the Application in start Menu-->
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="VendorMaintenance" Description="Vendor Maintenance Application"
+            Target="[INSTALLFOLDER]VendorMaintenance.exe" WorkingDirectory="INSTALLFOLDER">
+          <!--Add Icon to the ShortCut-->
+          <Icon Id="MYPMenuIcon"  SourceFile="G:\TAFE\5TSD\Assignment pt 2\VendorMaintenance - 1.1.0.0\Tafe17S1G3\Desktop.ico" />
+        </Shortcut>
+        <!--Remove the Folder At time of Uninstall-->
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU"  Key='Software\[Manufacturer]\[ProductName]'
+                       Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!-- Step 2.1: Add the shortcut to your installer package For DeskTop-->
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationDeskShortcutComp" Guid="96549907-BAF6-4189-A178-D2FD45247E34">
+        <Shortcut Id="ApplicationDeskShortcut" Name="MYAppDesk"
+                  Description="My Application Description" Target="[INSTALLFOLDER]VendorMaintenance.exe"
+                  WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MYDeskIcon"  SourceFile="G:\TAFE\5TSD\Assignment pt 2\VendorMaintenance - 1.1.0.0\Tafe17S1G3\Desktop.ico" />
+        </Shortcut>
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU"  Key='Software\[Manufacturer]\[ProductName]'
+                       Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!--Step 3.1: add Shortcut to StartUp Folder to run application when you login       -->
+    <DirectoryRef Id="StartupFolder">
+      <Component Id="ApplicationStartUpShortcutComp" Guid="A5B7A8F9-9ACF-41FF-ACD8-8C718E2670F0">
+        <Shortcut Id="ApplicationStartUpDeskShortcut" Name="MYAppDesk" Description="My Application Description"
+            Target="[INSTALLFOLDER]VendorMaintenance.exe" WorkingDirectory="INSTALLFOLDER">
+          <Icon Id="MyIconStartUp"  SourceFile="G:\TAFE\5TSD\Assignment pt 2\VendorMaintenance - 1.1.0.0\Tafe17S1G3\Desktop.ico" />
+        </Shortcut>
+        <RemoveFolder Id="StartupFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU"  Key='Software\[Manufacturer]\[ProductName]'
+                       Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <!--Add Component-->
+    <Feature Id="ProductFeature" Title="VendorMaintenance" Level="1">
+      <ComponentRef Id="VendorMaintenance.exe" />
+      <!--Step 1.2:Add Start menu or program  Shortcut-->
+      <ComponentRef Id="ApplicationShortcut" />
+      <!--step 2.2Add DeskTop Shortcut-->
+      <ComponentRef Id="ApplicationDeskShortcutComp" />
+      <!--step 3.2Add DeskTop Shortcut-->
+      <ComponentRef Id="ApplicationStartUpShortcutComp"/>
+    </Feature>
+    
+
+	</Product>
+
+</Wix>
